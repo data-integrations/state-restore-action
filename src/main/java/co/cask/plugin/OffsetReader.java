@@ -1,4 +1,4 @@
-package co.cask.cdap.hydrator.plugin.action;
+package co.cask.plugin;
 
 import co.cask.cdap.api.TxRunnable;
 import co.cask.cdap.api.annotation.Description;
