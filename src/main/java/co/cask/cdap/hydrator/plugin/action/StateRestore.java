@@ -2,6 +2,7 @@ package co.cask.cdap.hydrator.plugin.action;
 
 import co.cask.cdap.api.TxRunnable;
 import co.cask.cdap.api.annotation.Description;
+import co.cask.cdap.api.annotation.Macro;
 import co.cask.cdap.api.annotation.Name;
 import co.cask.cdap.api.annotation.Plugin;
 import co.cask.cdap.api.common.Bytes;
@@ -47,12 +48,15 @@ public class StateRestore extends Action {
 
   public class StateRestoreActionConfig extends PluginConfig {
     @Description("Tracking table where state is stored.")
+    @Macro
     private String trackingTable;
 
     @Description("Key to retrieve state stored in tracking table")
+    @Macro
     private String key;
 
     @Description("Default value used if state is not present in tracking table")
+    @Macro
     private String defaultValue;
 
     @VisibleForTesting
