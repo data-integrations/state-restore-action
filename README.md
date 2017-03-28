@@ -16,8 +16,7 @@ The tracking table name can be  specified by configuring the "Tracking Table" pr
 a default that is configured by the user in the "Default Value" configuration will be returned, the default value is typically used when the pipeline is run for the first time. All the plugin configurations are macro enabled and the values can be specified in the
 pipeline deployment time or at pipeline runtime.
 
-The plugin does not create the tracking table on deployment, this is because the pipeline assumes the sink which writes the state will create the tracking table. This can be either the same pipeline or a different one.
-
+The plugin does not create the tracking table on deployment, this is because the pipeline assumes the sink which writes the state will create the tracking table. 
 
 Plugin Configuration
 --------------------
