@@ -42,7 +42,7 @@ public class StateRestore extends Action {
         byte[] value = trackingTable.read(config.key);
         String state = value == null? config.defaultValue :  Bytes.toString(value);
         actionContext.getArguments().set("state", state);
-        LOG.trace("State: {}", state);
+        LOG.debug("State: {}", state);
       }
     });
   }

@@ -5,9 +5,9 @@ State Restore
 [![Build Status](https://travis-ci.org/hydrator/state-restore-action.svg?branch=develop)](https://travis-ci.org/hydrator/state-restore-action) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) <img src="https://cdap-users.herokuapp.com/assets/cdap-action.svg"/>
 
 
-State restore fetches previously store state from a tracking table and sets a run-time argument to be used for rest of the pipeline. State restore is used when a data pipeline needs to perform any operation that relies on previous run of the pipeline.
+State restore fetches previously stored state from a tracking table and sets a run-time argument to be used for rest of the pipeline. State restore is used when a data pipeline needs to perform any operation that relies on previous run of the pipeline.
 As an example, to perform incremental data ingestion from a database, an identifier that represents a starting point for the incremental ingest (ex: maximum value of update time in the database table) can be stored
-on each successful pipeline run, which then can be used as the starting point for subsequent data ingestion in the database select query. The state is stored in a variable called ${state} which can
+on each successful pipeline run, which then can be used as the starting point for subsequent data ingestion in the database select query. The state fetched is assigned to a variable called ${state} which can
  be substituted in any plugin property that is macro enabled.
 
 Usage Notes

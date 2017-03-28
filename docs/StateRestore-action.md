@@ -2,7 +2,7 @@
 
  Description
  -----------
- State restore fetches previously store state from a tracking table and sets a run-time argument to be used for rest of the pipeline. The state is stored in a variable called ${state} which can
+ State restore fetches previously stored state from a tracking table and sets a run-time argument to be used for rest of the pipeline. The state fetched is assigned to a variable called ${state} which can
  be substituted in any plugin property that is macro enabled.
 
 
