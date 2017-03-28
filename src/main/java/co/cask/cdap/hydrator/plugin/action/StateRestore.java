@@ -15,6 +15,8 @@ import com.google.common.annotations.VisibleForTesting;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nullable;
+
 /**
  * Action <></>o restore state from a tracking table.
  */
@@ -47,7 +49,7 @@ public class StateRestore extends Action {
 
 
   public class StateRestoreActionConfig extends PluginConfig {
-    @Description("Tracking table where state is stored.")
+    @Description("Tracking table where state is stored")
     @Macro
     private String trackingTable;
 
@@ -57,9 +59,13 @@ public class StateRestore extends Action {
 
     @Description("Default value used if state is not present in tracking table")
     @Macro
+    @Nullable
     private String defaultValue;
 
-    @VisibleForTesting
+    StateRestoreActionConfig(String trackingTable, String key) {
+      this(trackingTable, key, "");
+    }
+
     StateRestoreActionConfig(String trackingTable, String key, String defaultValue) {
       this.trackingTable = trackingTable;
       this.key = key;

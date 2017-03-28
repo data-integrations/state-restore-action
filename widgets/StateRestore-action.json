@@ -8,7 +8,7 @@
       "properties": [
         {
           "widget-type": "textbox",
-          "label": "Tracking Table",
+          "label": "Tracking table where state is stored",
           "name": "trackingTable",
           "widget-attributes": {
             "width": "large",
@@ -17,7 +17,7 @@
         },
         {
           "widget-type": "textbox",
-          "label": "Key for state in Tracking Table",
+          "label": "Key to retrieve state stored in tracking table",
           "name": "key",
           "widget-attributes": {
             "width": "large",
@@ -26,7 +26,7 @@
         },
         {
           "widget-type": "textbox",
-          "label": "Default value to configure if entry doesn't exist.",
+          "label": "Default value used if state is not present in tracking table",
           "name": "defaultValue",
           "widget-attributes": {
             "width": "large",
