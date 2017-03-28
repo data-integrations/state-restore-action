@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "spec-version": "1.0"
+  },
+  "configuration-groups": [
+    {
+      "label": "State Restore Configuration",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Tracking Table",
+          "name": "trackingTable",
+          "widget-attributes": {
+            "width": "large",
+            "default": "trackingTable"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Key for state in Tracking Table",
+          "name": "key",
+          "widget-attributes": {
+            "width": "large",
+            "default": "state"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Default value to configure if entry doesn't exist.",
+          "name": "defaultValue",
+          "widget-attributes": {
+            "width": "large",
+            "default": "1970-01-01 00:00:00"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "label": "schema",
+      "widget-type": "schema"
+    }
+  ]
+}
