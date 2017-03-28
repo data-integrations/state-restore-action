@@ -1,22 +1,24 @@
-State restore Action
-====================
+State Restore
+=============
 
 <a href="https://cdap-users.herokuapp.com/"><img alt="Join CDAP community" src="https://cdap-users.herokuapp.com/badge.svg?t=state-restore-action"/></a>
 [![Build Status](https://travis-ci.org/hydrator/state-restore-action.svg?branch=develop)](https://travis-ci.org/hydrator/state-restore-action) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) <img src="https://cdap-users.herokuapp.com/assets/cdap-action.svg"/>
 
 
-CDAP Action plugin to fetches previously store state from a tracking table and sets a run-time argument to be used for rest of the pipeline. The state is stored in a variable called ${state} which can
+State restore fetches previously store state from a tracking table and sets a run-time argument to be used for rest of the pipeline. The state is stored in a variable called ${state} which can
  be substituted in any plugin property that is macro enabled.
 
 Usage Notes
 -----------
 
-This plugin is used to restore state that is stored in the previous run of the pipeline and set the state as runtime argument in the current run. The plugin uses a tracking table, which can store key value pair that represents the pipeline state.
-The tracking table name can be  specified by configuring the "Tracking Table" property and the key to store the state is configured using the "Key" property. If the key is not found in the tracking table
-a default that is configured by the user in the "Default Value" configuration will be returned, the default value is typically used when the pipeline is run for the first time. All the plugin configurations are macro enabled and the values can be specified in the
+This plugin is used to restore state that is stored in the previous run of the pipeline and set the state as runtime argument in the current run. The plugin uses a tracking table, which is a key-value table to store the state the pipeline state.
+The tracking table name can be  specified by configuring the "Tracking Table" property and the key to store the state is configured using the "Key" property. The sink that maintains the pipeline state
+should write to a key-value table.
+
+If the key is not found in the tracking table a default that is configured by the user in the "Default Value" configuration will be returned, the default value is typically used when the pipeline is run for the first time. All the plugin configurations are macro enabled and the values can be specified in the
 pipeline deployment time or at pipeline runtime.
 
-The plugin does not create the tracking table on deployment, this is because the pipeline assumes the sink which writes the state will create the tracking table. 
+The plugin does not create the tracking table on deployment, this is because the pipeline assumes the sink which writes the state will create the tracking table.
 
 Plugin Configuration
 --------------------
@@ -28,7 +30,12 @@ Plugin Configuration
 | **Default Value** | **N** | '' | Specifies the default value to return if the state is not present in the tracking table|
 
 
+Use Case
+--------
 
+State restore is used when a data pipeline needs to perform any operation that relies on previous run of the pipeline.
+As an example, to perform incremental data ingestion from a database, an identifier that represents a starting point for the incremental ingest (ex: maximum value of update time in the database table) can be stored
+on each successful pipeline run, which then can be used as the starting point for subsequent data ingestion in the database select query.
 
 
 Build
