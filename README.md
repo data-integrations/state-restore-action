@@ -1,6 +1,6 @@
-State Restore
-=============
+# State Restore
 
+[![cm-available](https://cdap-users.herokuapp.com/assets/cm-available.svg)](https://docs.cask.co/cdap/current/en/integrations/cask-market.html)
 <a href="https://cdap-users.herokuapp.com/"><img alt="Join CDAP community" src="https://cdap-users.herokuapp.com/badge.svg?t=state-restore-action"/></a>
 [![Build Status](https://travis-ci.org/hydrator/state-restore-action.svg?branch=develop)](https://travis-ci.org/hydrator/state-restore-action) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) <img src="https://cdap-users.herokuapp.com/assets/cdap-action.svg"/>
 
